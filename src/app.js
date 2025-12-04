@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import { ApiError } from "./utils/ApiError.js";
 import authRouter from "./routes/auth.routes.js";
 import userRouter from "./routes/user.routes.js";
+import adminRouter from "./routes/admin.routes.js";
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.get("/health", (req, res) => {
 // Auth routes
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
+app.use("/api/admin", adminRouter);
 
 // 404 handler
 app.use((req, res, next) => {
