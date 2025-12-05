@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // TODO: move to env
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "OK",
-    message: "Auth service is up 🚀",
+    message: "Auth service is up ",
   });
 });
 

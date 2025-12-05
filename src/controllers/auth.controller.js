@@ -9,12 +9,10 @@ import {
   verifyRefreshToken,
 } from "../utils/jwt.js";
 
-// In-memory login attempt tracker (can be moved to Redis later)
-// key = email, value = { attempts, lastAttempt, lockedUntil }
 const loginAttempts = new Map();
 
 const MAX_LOGIN_ATTEMPTS = 5;
-const LOCK_TIME_MS = 15 * 60 * 1000; // 15 min
+const LOCK_TIME_MS = 15 * 60 * 1000;
 
 const ACCESS_COOKIE_OPTIONS = {
   httpOnly: true,
